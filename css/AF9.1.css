@@ -1,0 +1,98 @@
+/* jQuery and flex boxes 2021 */
+/* Write the rules of style in an orderly and optimal way */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Lobster&display=swap");
+
+/*
+Paleta de colores
+
+https://coolors.co/27187e-758bfd-aeb8fe-f1f2f6-ff8600-000000
+*/
+
+:root{
+  --negro: #000000;
+  --amarillo: #FF8600;
+  --blanco: #F1F2F6;
+  --azul-claro: #AEB8FE;
+  --azul: #758BFD;
+  --azul-oscuro: #27187E;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 1400px;
+  background-color: #252E71;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #020623;
+  color: #A48125;
+  height: 124px;
+  font-family: "Lobster", cursive;
+}
+
+header img {
+  height: 124px;
+  object-fit: contain;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  height: calc(100vh - 234px);
+  width: 85%;
+  margin: 0 auto;
+}
+
+section {
+  width: calc(100% / 4);
+  background-color: #C4A147;
+  padding: 5px;
+  margin:  0 10px;
+  height: 96%;
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  flex-direction: column;
+  font-family: "EB Garamond", serif;
+}
+
+section:hover a {
+  opacity: 1;
+}
+
+a {
+  margin-top: 20px;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 25px;
+  opacity: 0;
+  transition: 2s;
+}
+
+section > div {
+  display: none;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #020623;
+  color: #A48125;
+  height:80px;
+
+}
+
