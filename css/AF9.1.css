@@ -4,17 +4,16 @@
 
 /*
 Paleta de colores
-
 https://coolors.co/27187e-758bfd-aeb8fe-f1f2f6-ff8600-000000
 */
 
-:root{
+:root {
   --negro: #000000;
-  --amarillo: #FF8600;
-  --blanco: #F1F2F6;
-  --azul-claro: #AEB8FE;
-  --azul: #758BFD;
-  --azul-oscuro: #27187E;
+  --naranja: #ff8600;
+  --blanco: #f1f2f6;
+  --azul-claro: #aeb8fe;
+  --azul: #758bfd;
+  --azul-oscuro: #27187e;
 }
 
 *,
@@ -26,73 +25,206 @@ https://coolors.co/27187e-758bfd-aeb8fe-f1f2f6-ff8600-000000
 }
 
 body {
-  min-width: 1400px;
-  background-color: #252E71;
+  display: grid;
+  background-color: var(--azul-claro);
+  height: 100vh;
 }
 
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #020623;
-  color: #A48125;
-  height: 124px;
+  justify-content: space-between;
+  background-color: var(--azul-oscuro);
+  color: var(--naranja);
+  height: 12vh;
   font-family: "Lobster", cursive;
+  font-size: 0.4rem;
+  min-height: 22vw;
+  width: 100vw;
+}
+
+header * {
+  text-align: center;
 }
 
 header img {
-  height: 124px;
+  height: 22vw;
   object-fit: contain;
+  margin: 5px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  height: 7vh;
+  min-width: 250px;
+}
+
+nav p {
+  text-align: center;
+  padding: 5px;
+  width: 70px;
+  margin: 5px;
+  height: 30px;
+  color: var(--naranja);
+  background-color: var(--negro);
+  box-shadow: 2px 2px 2px rgb(65, 64, 64);
+}
+
+nav p:hover {
+  color: var(--negro);
+  background-color: var(--naranja);
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px;
-  height: calc(100vh - 234px);
-  width: 85%;
-  margin: 0 auto;
+  width: 100%;
+  display: grid;
 }
 
 section {
-  width: calc(100% / 4);
-  background-color: #C4A147;
-  padding: 5px;
-  margin:  0 10px;
-  height: 96%;
+  background-color: var(--naranja);
+  padding: 7px;
+  margin: 0 auto 15px auto;
+  min-height: 320px;
+  height: auto;
   display: flex;
   font-size: 14px;
   align-items: center;
   flex-direction: column;
   font-family: "EB Garamond", serif;
+  box-shadow: 2px 2px 2px rgb(65, 64, 64);
+  position: relative;
 }
 
-section:hover a {
-  opacity: 1;
+section:nth-child(even) {
+  background-color: var(--blanco);
+}
+
+section p {
+  margin-bottom: 10px;
+  text-align: justify;
 }
 
 a {
+  position: absolute;
+  bottom: 50px;
   margin-top: 20px;
   text-decoration: none;
   padding: 5px;
-  border: 1px solid;
+  border: 1px solid var(--azul-claro);
   border-radius: 25px;
-  opacity: 0;
   transition: 2s;
+  background-color: var(--blanco);
 }
 
-section > div {
-  display: none;
+section:nth-child(even) a {
+  background-color: var(--negro);
+  color: var(--blanco);
 }
 
 footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #020623;
-  color: #A48125;
-  height:80px;
-
+  background-color: var(--azul-oscuro);
+  color: var(--naranja);
+  height: 7vh;
+  min-height: 40px;
+  font-size: 0.5rem;
 }
 
+footer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+footer h3 {
+  float: left;
+  line-height: 50px;
+}
+
+footer h3:nth-child(2) {
+  float: right;
+}
+
+/* Tablets*/
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  header {
+    font-size: 1rem;
+    min-height: 10vw;
+  }
+
+  header img {
+    height: 10vw;
+  }
+
+  nav p {
+    font-size: 1.2rem;
+    width: 30%;
+  }
+
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section {
+    width: 98%;
+  }
+
+  section:nth-child(3) {
+    grid-column: span 3;
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+}
+
+/* PC */
+@media screen and (min-width: 900px) {
+  body {
+    width: 100vw;
+    grid-template-columns: 1fr 8fr;
+  }
+
+  header {
+    grid-column: span 2;
+    min-height: 100px;
+    font-size: 1.6rem;
+  }
+
+  header img {
+    width: 6vw;
+  }
+
+  nav {
+    min-width: 0px;
+    flex-direction: column;
+    height: 90%;
+  }
+
+  nav p {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 76vh;
+    width: 90vw;
+    margin: 1vh auto;
+  }
+
+  section {
+    margin: 0 5px;
+  }
+
+  footer {
+    grid-column: span 2;
+    height: 10vh;
+    min-height: 70px;
+    font-size: 1.2rem;
+  }
+}

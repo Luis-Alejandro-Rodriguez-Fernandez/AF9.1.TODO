@@ -6,22 +6,22 @@
 //   $(this).find("a").css({ opacity: "0", transition: "2s" });
 // });
 
-$("a").mouseenter(function () {
-  let pais = $(this).siblings("h2").text();
-  let foto1=`images/${pais.toLowerCase()}.jpg`;
-  let foto2=`images/${pais.toLowerCase()}.logo.png`;
-  $("header img").first().attr("src", foto1);
-  $("header img").last().attr("src", foto2);
+// $("a").mouseenter(function () {
+//   let pais = $(this).siblings("h2").text();
+//   let foto1=`images/${pais.toLowerCase()}.jpg`;
+//   let foto2=`images/${pais.toLowerCase()}.logo.png`;
+//   $("header img").first().attr("src", foto1);
+//   $("header img").last().attr("src", foto2);
 
-  $(this).next().show(600);
-  $(this).siblings("div").toggle();
+//   $(this).next().show(600);
+//   $(this).siblings("div").toggle();
 
-});
+// });
 
-$("a").mouseleave(function () {
-  let foto1 = "images/europe1.jpg";
-  let foto2 = "images/europe2.jpg";
-  $(this).siblings("div").toggle();
-  $("header img").first().attr("src", foto1);
-  $("header img").last().attr("src", foto2);
-});
+// $("a").mouseleave(function () {
+//   let foto1 = "images/europe1.jpg";
+//   let foto2 = "images/europe2.jpg";
+//   $(this).siblings("div").toggle();
+//   $("header img").first().attr("src", foto1);
+//   $("header img").last().attr("src", foto2);
+// });
