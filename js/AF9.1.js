@@ -1,27 +1,27 @@
 // write here the optimal jQuery code as required in the statemens
-// $("section").mouseenter(function () {
-//   $(this).children().css({ opacity: "1", transition: "2s" });
-// });
-// $("section").mouseleave(function () {
-//   $(this).find("a").css({ opacity: "0", transition: "2s" });
-// });
 
-// $("a").mouseenter(function () {
-//   let pais = $(this).siblings("h2").text();
-//   let foto1=`images/${pais.toLowerCase()}.jpg`;
-//   let foto2=`images/${pais.toLowerCase()}.logo.png`;
-//   $("header img").first().attr("src", foto1);
-//   $("header img").last().attr("src", foto2);
+$(document).ready(function () {
+  $("main > section:nth-of-type(odd)").hover(
+    function () {
+      $(this).find("a + div").fadeIn(500);
+    },
+    function () {
+      $(this).find("a + div").fadeOut(500);
+    }
+  );
 
-//   $(this).next().show(600);
-//   $(this).siblings("div").toggle();
+  $("section:nth-of-type(even)").on("dblclick", function () {
+    $(this).find("a + div").fadeIn(500);
+  });
 
-// });
+  $("section > div > img + img").click(function () {
+    $(this).parent().parent().find("a + div").fadeOut(500);
+  });
 
-// $("a").mouseleave(function () {
-//   let foto1 = "images/europe1.jpg";
-//   let foto2 = "images/europe2.jpg";
-//   $(this).siblings("div").toggle();
-//   $("header img").first().attr("src", foto1);
-//   $("header img").last().attr("src", foto2);
-// });
+  $("nav p").click(function() {
+    let txt = $(this).text();
+    $(`h2:contains('${txt}')`).parent().slideToggle(500);
+  });
+
+
+});
