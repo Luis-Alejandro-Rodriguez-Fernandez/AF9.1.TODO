@@ -3,24 +3,24 @@
 $(document).ready(function () {
   $("main > section:nth-of-type(odd)").hover(
     function () {
-      $(this).find("a + div").fadeIn(500);
+      $(this).find("a + div").fadeIn(1000);
     },
     function () {
-      $(this).find("a + div").fadeOut(500);
+      $(this).find("a + div").fadeOut(1000);
     }
   );
 
   $("section:nth-of-type(even)").on("dblclick", function () {
-    $(this).find("a + div").fadeIn(500);
+    $(this).find("a + div").fadeIn(1000);
   });
 
   $("section > div > img + img").click(function () {
-    $(this).parent().parent().find("a + div").fadeOut(500);
+    $(this).parent().parent().find("a + div").fadeOut(1000);
   });
 
   $("nav p").click(function() {
     let txt = $(this).text();
-    $(`h2:contains('${txt}')`).parent().slideToggle(500);
+    $(`h2:contains('${txt}')`).parent().slideToggle(1000);
   });
 
 

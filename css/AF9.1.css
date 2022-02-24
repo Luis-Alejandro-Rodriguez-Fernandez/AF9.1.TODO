@@ -266,8 +266,8 @@ footer h3:nth-child(2) {
 
 @keyframes animacion {
   from {
-    transform: scale(0.5);
-    opacity: 0.2;
+    transform: scale(0.3);
+    opacity: 0;
     left: 80%;
   }
   to {
